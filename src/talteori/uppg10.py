@@ -1,40 +1,18 @@
-import math
+def a(n):
+	return 2 ** (4 * n - 2) + 1
 
+# uppg 10
+# a)
 
-def isPowerOfPreviousFactor(factors, k):
+print("Defenition: a(n) = 2 ^ (4n - 2) + 1, n >= 1")
+print("a(1) =", a(1))
+print("Därmed bör faktorn (om det finns en gemensam faktor för alla a(n) där n >= 1) vara 5, då det är ett primtal")
+print()
 
-	for i in range(0, len(factors)):
+# b)
 
-			if k % factors[i] == 0:
-
-				return True
-	
-	return False
-
-
-def a(input):
-	return 2 ** (4 * input - 2)
-
-
-def giveFactors(input):
-
-	factors = []
-	topRange = math.floor(math.sqrt(input) + 1)
-
-	for k in range(2, topRange):
-
-		if isPowerOfPreviousFactor(factors, k):
-			break
-		elif input % k == 0:
-			factors.append(k)
-
-	return factors
-
-
-print(a(1), "har endast faktor", giveFactors(a(1)))
-for n in range(2, 111):
-
-	if giveFactors(a(n)).__contains__(giveFactors(a(1))[0]) == False:
-		print(a(n), "har inte faktor", giveFactors(a(1)))
-	else:
-		print(a(n), "har endast faktor", giveFactors(a(1)))
+print("Bevis:")
+print("Om a(n) mod(5) = 0 för alla n >= 1 bör även (a(n + 1) - a(n)) mod(5) = 0")
+print()
+print("a(n + 1) - a(n) = 2 ^ (4(n + 1) - 2) - 2 ^ (4n - 2) - 1 + 1 =")
+print("= 2 ^ (4n + 2) - 2 ^ (4n - 2)")
