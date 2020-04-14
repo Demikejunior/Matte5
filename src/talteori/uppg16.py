@@ -6,4 +6,4 @@ while(pengar > 0):
     pengar *= 1.02
     år += 1
 
-print(år)
+print(år, "år")
