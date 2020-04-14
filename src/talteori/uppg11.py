@@ -7,10 +7,3 @@ def formel1(n):
 def formel2(n):
 	return n * ((n + 1) ** 2)
 
-for n in range(0, 100):
-	if formel1(n) == formel2(n):
-		print("formel 1 av", n, "är lika med formel 2 av", n)
-	else:
-		print("formel 1 av", n, "är inte lika med formel 2 av", n)
-	
-	print()
